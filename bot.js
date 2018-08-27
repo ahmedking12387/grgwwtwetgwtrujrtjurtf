@@ -29,7 +29,7 @@ client.on('ready', () => {
     client.user.setStatus("Online")
 });
  
-const prefix = "8"
+const prefix = "2"
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
  
@@ -250,7 +250,7 @@ client.user.setGame(args , '');
            msg.delete(5000);
           message.delete(5000);
         });
-    } else if(message.content.startsWith(prefix + "play")) {
+    } else if(message.content.startsWith(prefix + "playing")) {
 				        if(message.author.id !== myID) return;
             if(!args) return message.reply('اكتب الحالة اللي تريدها.');
         client.user.setGame(args);
