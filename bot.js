@@ -34,7 +34,7 @@ client.on('ready', () => {
 **
 Welcome To Wind Server
 
-[https://discord.gg/uErcad9]
+https://discord.gg/uErcad9
 **`)
 }).catch(console.error)
 
@@ -46,7 +46,7 @@ client.on("guildMemberAdd", member => {
 **
 Welcome To Wind Server
 
-[https://discord.gg/uErcad9]
+https://discord.gg/uErcad9
 **`)
 }).catch(console.error)
 })
