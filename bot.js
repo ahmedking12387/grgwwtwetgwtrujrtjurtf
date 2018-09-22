@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const prefix = '+'
 
 client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -25,31 +26,6 @@ client.on('ready', () => {
   console.log('')
   console.log('')
 });
- 
-
-
- client.on("guildMemberRemove", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(` 
-**
-Welcome To Wind Server
-
-https://discord.gg/uErcad9
-**`)
-}).catch(console.error)
-
-})
- 
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(` 
-**
-Welcome To Wind Server
-
-https://discord.gg/uErcad9
-**`)
-}).catch(console.error)
-})
 
 
 client.on('message', function(message) {
@@ -66,7 +42,7 @@ client.on('message', function(message) {
     } else if(message.content.startsWith(prefix + "stream")) {
 		        if(message.author.id !== myID) return;
             if(!args) return message.reply('اكتب الحالة اللي تريدها.');
-        client.user.setGame(args , 'https://twitch.tv/LOP');
+        client.user.setGame(args , 'https://twitch.tv/A_K');
         message.channel.send(':white_check_mark: Done!').then(msg => {
            msg.delete(5000);
           message.delete(5000);
@@ -78,7 +54,7 @@ client.user.setGame(args , '');
            msg.delete(5000);
           message.delete(5000);
         });
-    } else if(message.content.startsWith(prefix + "playing")) {
+    } else if(message.content.startsWith(prefix + "play")) {
 				        if(message.author.id !== myID) return;
             if(!args) return message.reply('اكتب الحالة اللي تريدها.');
         client.user.setGame(args);
@@ -111,6 +87,46 @@ client.user.setGame(args , '');
           message.delete(5000);
         });
     }
+});
+
+
+
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+// -say
+  if (command === "say") {
+          message.delete()
+    message.channel.sendMessage(args.join(" ")).catch(console.error);
+  }
+
+
+
+if (command == "embed") {
+    let say = new Discord.RichEmbed()
+    .setDescription(args.join("  "))
+    .setColor("RANDOM")
+    message.channel.sendEmbed(say);
+    message.delete();
+  }
+
+
+});
+
+
+         client.on('message', message => {
+            if (message.content === 'Welcome To  Server Wind#') {
+              message.channel.send('```#Welcome To  Server Wind..💛```');
+
+               
+
+            }
 });
 
 
