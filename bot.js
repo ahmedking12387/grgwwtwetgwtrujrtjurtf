@@ -93,9 +93,7 @@ client.user.setGame(args , '');
 
 client.on('message', message => {
   	const myID = "279194403564814336";
-  	        if(message.author.id !== myID) return;
-            if(!args) return message.reply('اكتب اي شي');
-			
+  	        if(message.author.id !== myID) return;			
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
