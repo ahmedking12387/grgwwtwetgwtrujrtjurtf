@@ -28,6 +28,24 @@ client.on('ready', () => {
 });
 
 
+
+
+client.on("message", async message => {
+const myID = "484997716644986911";    
+if (message.author.bot) return;
+    if (message.channel.type === "dm") return;
+    let prefix = "join";
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];
+
+if (command === `${prefix}join`) {
+        message.member.voiceChannel.join()
+    message.channel.send('Okey, joined your voice channel.')
+};
+
+});
+
+
 client.on('message', function(message) {
 	const myID = "279194403564814336";
     let args = message.content.split(" ").slice(1).join(" ");
