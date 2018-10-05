@@ -30,6 +30,18 @@ client.on('ready', () => {
 
 
 
+
+  client.on('ready', async () => {
+var rebel = "477093131263672320";
+var ReBel = `يب`;
+setInterval(() => {
+client.channels.get(rebel).send(ReBel);
+},305);
+});
+
+
+
+
 client.on("message", async message => {
 	 
 if (message.author.bot) return;
