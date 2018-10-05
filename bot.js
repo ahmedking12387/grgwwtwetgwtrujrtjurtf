@@ -31,7 +31,7 @@ client.on('ready', () => {
 
 
 client.on("message", async message => {
-	const myID = "279194403564814336";
+	 
 if (message.author.bot) return;
     if (message.channel.type === "dm") return;
     let prefix = "join";
