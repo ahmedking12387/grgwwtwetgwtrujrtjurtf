@@ -29,19 +29,6 @@ client.on('ready', () => {
 
 
 
-
-
-  client.on('ready', async () => {
-var rebel = "497895144138473512";
-var ReBel = `نجمع بوينتات تاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتاتا`;
-setInterval(() => {
-client.channels.get(rebel).send(ReBel);
-},305);
-});
-
-
-
-
 client.on("message", async message => {
 	 
 if (message.author.bot) return;
